@@ -1,6 +1,9 @@
 # MDEditor
 
 MDEditor는 Windows 환경에서 문서를 쉽게 작성할 수 있도록 만든 오프라인 문서 편집기입니다. Markdown의 장점은 유지하면서도, 사용자는 일반 문서 편집기처럼 화면을 보며 시각적으로 글을 작성할 수 있게 하는 것이 이 프로젝트의 핵심입니다.
+<img width="1912" height="954" alt="md" src="https://github.com/user-attachments/assets/c949d029-4cc3-44af-a191-7c96b88f6b7b" />
+
+
 
 ## 다운로드
 
