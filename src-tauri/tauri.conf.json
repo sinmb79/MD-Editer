@@ -1,0 +1,34 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "MDEditor",
+  "version": "0.1.0",
+  "identifier": "com.22blabs.mdeditor",
+  "build": {
+    "beforeBuildCommand": "npm run build",
+    "beforeDevCommand": "npm run dev -- --host 0.0.0.0 --port 1420",
+    "devUrl": "http://localhost:1420",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "MDEditor",
+        "width": 1440,
+        "height": 960,
+        "resizable": true
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["nsis"],
+    "copyright": "22B Labs",
+    "category": "Productivity",
+    "externalBin": ["binaries/pandoc"],
+    "shortDescription": "Offline WYSIWYG Markdown editor for Korean document workflows"
+  }
+}

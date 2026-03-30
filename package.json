@@ -1,0 +1,54 @@
+{
+  "name": "mdeditor",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "sync:pandoc": "powershell -ExecutionPolicy Bypass -File scripts/Sync-PandocSidecar.ps1",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "tauri": "tauri",
+    "tauri:build:win": "powershell -ExecutionPolicy Bypass -File scripts/Invoke-Tauri.ps1 build",
+    "tauri:dev:win": "powershell -ExecutionPolicy Bypass -File scripts/Invoke-Tauri.ps1 dev"
+  },
+  "keywords": [
+    "markdown",
+    "editor",
+    "tauri",
+    "react"
+  ],
+  "author": "22B Labs",
+  "license": "MIT",
+  "dependencies": {
+    "@tauri-apps/api": "^2.10.1",
+    "@tauri-apps/plugin-dialog": "^2.6.0",
+    "@tauri-apps/plugin-fs": "^2.4.5",
+    "@tauri-apps/plugin-shell": "^2.3.5",
+    "@toast-ui/editor": "^3.2.2",
+    "@toast-ui/editor-plugin-chart": "^3.0.1",
+    "@toast-ui/editor-plugin-color-syntax": "^3.1.0",
+    "@toast-ui/editor-plugin-table-merged-cell": "^3.1.0",
+    "@toast-ui/editor-plugin-uml": "^3.0.1",
+    "@toast-ui/react-editor": "^3.2.3",
+    "katex": "^0.16.22",
+    "mermaid": "^11.12.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.10.1",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^12.1.5",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/react": "^17.0.90",
+    "@types/react-dom": "^17.0.26",
+    "@vitejs/plugin-react": "^5.0.4",
+    "jsdom": "^27.0.0",
+    "typescript": "^5.9.3",
+    "vite": "^7.1.12",
+    "vitest": "^4.0.3"
+  }
+}
