@@ -7,6 +7,8 @@ MDEditor is a Windows-first offline document editor for people who want to write
 - Repository: [sinmb79/MD-Editer](https://github.com/sinmb79/MD-Editer)
 - Latest release: [MDEditor v0.1.0](https://github.com/sinmb79/MD-Editer/releases/tag/v0.1.0)
 - Windows installer: [MDEditor_0.1.0_x64-setup.exe](https://github.com/sinmb79/MD-Editer/releases/download/v0.1.0/MDEditor_0.1.0_x64-setup.exe)
+- <img width="1912" height="954" alt="image" src="https://github.com/user-attachments/assets/d74f2449-acb6-40c0-9105-c57fddafce2f" />
+
 
 ## Why This Project Exists
 
