@@ -1,114 +1,121 @@
-# MDEditor User Guide
+# MDEditor 사용자 안내서
 
-This guide is written for people who just want to use the app, not study the codebase.
+이 문서는 코드를 보는 사람이 아니라, 앱을 실제로 사용하는 사람을 위한 안내서입니다.
 
-## What MDEditor Is
+## MDEditor란?
 
-MDEditor is a desktop writing tool for Windows.
+MDEditor는 Windows용 문서 작성 프로그램입니다.
 
-It lets you write documents in a visual editor, save them as Markdown files, and export them as PDFs.
+일반 문서 편집기처럼 화면을 보며 글을 쓸 수 있고, 결과는 Markdown 파일로 저장되며, 필요할 때 PDF로 내보낼 수 있습니다.
 
-You do not need to understand Markdown syntax to use the basic workflow.
+기본 사용 흐름에서는 Markdown 문법을 몰라도 괜찮습니다.
 
-## The Simple Idea
+## 아주 간단히 보면
 
 ```mermaid
 flowchart LR
-    A["Write like a normal editor"] --> B["Save as Markdown"]
-    B --> C["Keep the file locally"]
-    C --> D["Export to PDF when finished"]
+    A["일반 문서처럼 작성"] --> B["Markdown 파일로 저장"]
+    B --> C["내 컴퓨터에 보관"]
+    C --> D["필요할 때 PDF로 내보내기"]
 ```
 
-## What You Can Do
+## 무엇을 할 수 있나
 
-- start a blank document
-- begin from a ready-made template
-- format text with toolbar buttons
-- save your work as a `.md` file
-- open the file later and continue editing
-- export the finished document as a PDF
+- 빈 문서로 시작하기
+- 준비된 템플릿으로 시작하기
+- 버튼으로 글자 꾸미기
+- `.md` 파일로 저장하기
+- 나중에 다시 열어서 수정하기
+- 완성본을 PDF로 내보내기
 
-## A Typical Document Journey
+## 문서 작업 흐름
 
 ```mermaid
 flowchart TD
-    A["Open MDEditor"] --> B["Choose blank page or template"]
-    B --> C["Write and format the document"]
-    C --> D["Save as .md"]
-    D --> E["Reopen later if needed"]
-    E --> F["Export as PDF"]
+    A["MDEditor 실행"] --> B["빈 문서 또는 템플릿 선택"]
+    B --> C["문서 작성 및 서식 적용"]
+    C --> D[".md 파일로 저장"]
+    D --> E["필요하면 나중에 다시 열기"]
+    E --> F["PDF로 내보내기"]
 ```
 
-## First-Time Use
+## 처음 사용할 때
 
-1. Open the app.
-2. Decide whether to start with a blank page or a template.
-3. Write the content in the editor.
-4. Use the toolbar for bold text, headings, lists, tables, links, images, or diagrams.
-5. Save the document.
-6. Export a PDF when the document is complete.
+1. 앱을 실행합니다.
+2. 빈 문서로 시작할지, 템플릿으로 시작할지 고릅니다.
+3. 편집 화면에서 문서를 작성합니다.
+4. 툴바 버튼으로 굵게, 제목, 목록, 표, 링크, 이미지, 다이어그램 등을 넣습니다.
+5. 문서를 저장합니다.
+6. 문서가 완성되면 PDF로 내보냅니다.
 
-## Templates
+## 템플릿
 
-MDEditor includes simple starter templates for common document types:
+MDEditor에는 자주 쓰는 문서를 빨리 시작할 수 있도록 기본 서식이 들어 있습니다.
 
-- Blank document
-- Report
-- Meeting notes
-- Proposal
+- 빈 문서
+- 보고서
+- 회의록
+- 기안서
 
-Templates are meant to reduce the time needed to create a first draft.
+템플릿은 첫 초안을 빠르게 만들기 위한 시작점입니다.
 
-## Saving Your Work
+## 저장 방법
 
-There are two main save actions:
+주요 저장 방식은 두 가지입니다.
 
-- `Save`: save the current file
-- `Save As`: save a copy with a new file name or location
+- `저장`: 현재 파일에 그대로 저장
+- `다른 이름으로 저장`: 새 이름이나 새 위치에 별도로 저장
 
-If you try to replace unsaved content, the app asks for confirmation first.
+아직 저장하지 않은 내용이 있는데 다른 작업으로 바꾸려 하면, 앱이 먼저 확인 메시지를 보여줍니다.
 
-## Exporting To PDF
+## PDF 내보내기
 
-When your document is ready:
+문서가 준비되면 아래 순서로 진행하면 됩니다.
 
-1. save the current document
-2. choose PDF export
-3. wait for the app to convert the file
+1. 현재 문서를 저장합니다.
+2. PDF 내보내기를 선택합니다.
+3. 앱이 문서를 변환할 때까지 잠시 기다립니다.
 
-The app uses Pandoc behind the scenes to turn the Markdown file into a PDF.
+이 과정에서 앱은 내부적으로 Pandoc를 사용해 Markdown 파일을 PDF로 바꿉니다.
 
-## What “Offline-First” Means Here
+## 오프라인 중심이라는 뜻
 
-MDEditor is designed so that your main document work happens on your computer.
+MDEditor는 기본적으로 내 컴퓨터 안에서 문서를 다루는 흐름을 중심으로 설계됐습니다.
 
-That means:
+즉,
 
-- your files are local
-- the editor does not depend on a cloud service for normal use
-- you can keep your own folder structure
+- 파일은 내 컴퓨터에 저장되고
+- 일반 사용에 클라우드 연결이 꼭 필요하지 않으며
+- 내가 원하는 폴더 구조로 관리할 수 있습니다
 
-## What To Expect
+## 어떤 문서에 잘 맞나
 
-MDEditor is best for:
+MDEditor는 아래와 같은 문서에 특히 잘 맞습니다.
 
-- draft writing
-- structured reports
-- internal meeting notes
-- proposals and administrative documents
+- 초안 문서
+- 보고서
+- 회의 정리 문서
+- 내부 제안서나 기안서
 
-It is not meant to replace:
+반대로 아래와 같은 용도는 이 앱의 주된 목표가 아닙니다.
 
-- large collaborative document platforms
-- advanced design/layout tools
-- real-time cloud co-editing tools
+- 여러 사람이 동시에 편집하는 문서
+- 복잡한 출판용 레이아웃 작업
+- 대규모 클라우드 협업 문서 플랫폼
 
-## If Something Feels Unsafe
+## 주의해야 할 점
 
-If the app warns you that there are unsaved changes, stop and decide before continuing.
+앱이 저장되지 않은 변경 사항이 있다고 알려주면, 바로 넘기지 말고 한 번 더 확인하는 것이 좋습니다.
 
-That warning exists to prevent accidental loss of work.
+이 경고는 작성 중인 내용을 실수로 잃어버리지 않도록 막아주는 장치입니다.
 
-## If You Want The Source Build
+## 설치 파일이 필요하다면
 
-If someone on your team needs to build the app from source, the main instructions are in [README.md](../README.md).
+설치 파일은 저장소 파일 목록이 아니라 `Releases`에 올라갑니다.
+
+- 릴리스 페이지: [MDEditor v0.1.0](https://github.com/sinmb79/MD-Editer/releases/tag/v0.1.0)
+- 직접 다운로드: [MDEditor_0.1.0_x64-setup.exe](https://github.com/sinmb79/MD-Editer/releases/download/v0.1.0/MDEditor_0.1.0_x64-setup.exe)
+
+## 소스에서 직접 빌드하려면
+
+팀 내 개발자가 소스에서 직접 빌드해야 한다면, 자세한 내용은 [README.md](../README.md)를 참고하면 됩니다.
