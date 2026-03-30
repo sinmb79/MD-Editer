@@ -2,6 +2,12 @@
 
 MDEditor is a Windows-first offline document editor for people who want to write formal documents without dealing with raw Markdown syntax. It combines a Korean WYSIWYG editing experience with simple file handling and PDF export.
 
+## Download
+
+- Repository: [sinmb79/MD-Editer](https://github.com/sinmb79/MD-Editer)
+- Latest release: [MDEditor v0.1.0](https://github.com/sinmb79/MD-Editer/releases/tag/v0.1.0)
+- Windows installer: [MDEditor_0.1.0_x64-setup.exe](https://github.com/sinmb79/MD-Editer/releases/download/v0.1.0/MDEditor_0.1.0_x64-setup.exe)
+
 ## Why This Project Exists
 
 Many teams still want the portability of Markdown files, but the people writing the documents often prefer something that feels closer to a word processor.
