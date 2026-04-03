@@ -10,7 +10,7 @@ MDEditor는 Windows 환경에서 문서를 쉽게 작성할 수 있도록 만든
 - 저장소: [sinmb79/MD-Editer](https://github.com/sinmb79/MD-Editer)
 - 최신 릴리스: [GitHub Releases 최신 페이지](https://github.com/sinmb79/MD-Editer/releases/latest)
 - Windows 설치 파일: [최신 릴리스 페이지에서 다운로드](https://github.com/sinmb79/MD-Editer/releases/latest)
-- 현재 기준 최신 태그: `v0.1.5`
+- 현재 기준 최신 태그: `v0.1.6`
 
 ## 개발 취지
 
@@ -83,9 +83,24 @@ sequenceDiagram
 - TOAST UI Editor 기반 WYSIWYG 편집
 - `새 문서 / 열기 / 저장 / 다른 이름으로 저장` 흐름
 - 빈 문서, 보고서, 회의록, 기안서 템플릿 제공
+- 한국 공문서용 공식 문서 템플릿 7종 제공
 - Pandoc 기반 PDF 내보내기
 - 오프라인 로컬 파일 작업
 - Windows NSIS 설치 파일 생성 지원
+
+## 공문서 템플릿
+
+이번 버전부터 MDEditor 안에서 한국 행정기관 문서 형식을 참고한 공문서 템플릿을 바로 고를 수 있습니다.
+
+- 기안문 (내부결재)
+- 기안문 (대외시행문)
+- 업무협조전
+- 회의록 (행정공식)
+- 검토보고서
+- 민원 회신문
+- 공고문
+
+자세한 템플릿 안내는 [templates/README.md](./templates/README.md)와 [templates/official-docs/README.md](./templates/official-docs/README.md)에서 볼 수 있습니다.
 
 ## 이런 분께 적합합니다
 

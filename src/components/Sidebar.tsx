@@ -1,4 +1,4 @@
-import { DOCUMENT_TEMPLATES, type TemplateId } from '../lib/templates';
+import { TEMPLATE_GROUPS, type TemplateId } from '../lib/templates';
 
 interface SidebarProps {
   currentPath: string | null;
@@ -10,19 +10,28 @@ export function Sidebar({ currentPath, onSelectTemplate }: SidebarProps) {
     <aside className="sidebar">
       <section className="sidebar__section">
         <h2>문서 서식</h2>
-        <div className="template-list">
-          {DOCUMENT_TEMPLATES.map((template) => (
-            <button
-              className="template-list__item"
-              key={template.id}
-              onClick={() => onSelectTemplate(template.id)}
-              type="button"
-            >
-              <strong>{template.label}</strong>
-              <span>{template.description}</span>
-            </button>
-          ))}
-        </div>
+        {TEMPLATE_GROUPS.map((group) => (
+          <section className="template-group" key={group.category}>
+            <div className="template-group__header">
+              <h3>{group.label}</h3>
+              <span>{group.templates.length}개</span>
+            </div>
+            <p>{group.description}</p>
+            <div className="template-list">
+              {group.templates.map((template) => (
+                <button
+                  className="template-list__item"
+                  key={template.id}
+                  onClick={() => onSelectTemplate(template.id)}
+                  type="button"
+                >
+                  <strong>{template.label}</strong>
+                  <span>{template.description}</span>
+                </button>
+              ))}
+            </div>
+          </section>
+        ))}
       </section>
 
       <section className="sidebar__section">

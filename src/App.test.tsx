@@ -71,6 +71,10 @@ describe('App', () => {
     expect(screen.getByRole('button', { name: '새 문서' })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: '열기' })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: '저장' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: '기본 서식' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: '공문서 양식' })).toBeInTheDocument();
+    expect(screen.getByText('행정기관 공문서 형식을 참고한 공식 문서 서식 7종입니다.')).toBeInTheDocument();
+    expect(screen.getByText('기안문 (내부결재)')).toBeInTheDocument();
 
     clickTemplate('보고서');
 

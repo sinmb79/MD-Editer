@@ -33,6 +33,13 @@ export interface DocumentTemplate {
   content: string;
 }
 
+export interface TemplateGroup {
+  category: TemplateCategory;
+  label: string;
+  description: string;
+  templates: DocumentTemplate[];
+}
+
 export const DEFAULT_TEMPLATE_ID: TemplateId = 'report';
 
 function normalizeTemplateContent(content: string): string {
@@ -118,6 +125,25 @@ export const DOCUMENT_TEMPLATES: DocumentTemplate[] = [
     content: normalizeTemplateContent(officialPublicNoticeTemplate),
   },
 ];
+
+const TEMPLATE_GROUP_METADATA: Record<TemplateCategory, Omit<TemplateGroup, 'category' | 'templates'>> = {
+  general: {
+    label: '기본 서식',
+    description: '보고서, 회의록, 기안서처럼 자주 쓰는 일반 문서 서식입니다.',
+  },
+  'official-docs': {
+    label: '공문서 양식',
+    description: '행정기관 공문서 형식을 참고한 공식 문서 서식 7종입니다.',
+  },
+};
+
+const TEMPLATE_GROUP_ORDER: TemplateCategory[] = ['general', 'official-docs'];
+
+export const TEMPLATE_GROUPS: TemplateGroup[] = TEMPLATE_GROUP_ORDER.map((category) => ({
+  category,
+  ...TEMPLATE_GROUP_METADATA[category],
+  templates: DOCUMENT_TEMPLATES.filter((template) => template.category === category),
+}));
 
 export function getTemplateById(id: TemplateId): DocumentTemplate {
   const template = DOCUMENT_TEMPLATES.find((item) => item.id === id);

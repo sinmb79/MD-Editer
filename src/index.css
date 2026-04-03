@@ -163,6 +163,33 @@ button:disabled {
   gap: 0.8rem;
 }
 
+.template-group + .template-group {
+  margin-top: 1.2rem;
+}
+
+.template-group__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.3rem;
+}
+
+.template-group__header h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.template-group__header span,
+.template-group p {
+  font-size: 0.9rem;
+  opacity: 0.74;
+}
+
+.template-group p {
+  margin: 0 0 0.75rem;
+}
+
 .template-list__item {
   display: flex;
   flex-direction: column;
