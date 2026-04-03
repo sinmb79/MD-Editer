@@ -8,8 +8,9 @@ MDEditor는 Windows 환경에서 문서를 쉽게 작성할 수 있도록 만든
 ## 다운로드
 
 - 저장소: [sinmb79/MD-Editer](https://github.com/sinmb79/MD-Editer)
-- 최신 릴리스: [MDEditor v0.1.0](https://github.com/sinmb79/MD-Editer/releases/tag/v0.1.0)
-- Windows 설치 파일: [MDEditor_0.1.0_x64-setup.exe](https://github.com/sinmb79/MD-Editer/releases/download/v0.1.0/MDEditor_0.1.0_x64-setup.exe)
+- 최신 릴리스: [GitHub Releases 최신 페이지](https://github.com/sinmb79/MD-Editer/releases/latest)
+- Windows 설치 파일: [최신 릴리스 페이지에서 다운로드](https://github.com/sinmb79/MD-Editer/releases/latest)
+- 현재 기준 최신 태그: `v0.1.1`
 
 ## 개발 취지
 

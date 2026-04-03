@@ -113,8 +113,9 @@ MDEditor는 아래와 같은 문서에 특히 잘 맞습니다.
 
 설치 파일은 저장소 파일 목록이 아니라 `Releases`에 올라갑니다.
 
-- 릴리스 페이지: [MDEditor v0.1.0](https://github.com/sinmb79/MD-Editer/releases/tag/v0.1.0)
-- 직접 다운로드: [MDEditor_0.1.0_x64-setup.exe](https://github.com/sinmb79/MD-Editer/releases/download/v0.1.0/MDEditor_0.1.0_x64-setup.exe)
+- 릴리스 페이지: [최신 릴리스 페이지](https://github.com/sinmb79/MD-Editer/releases/latest)
+- 현재 기준 최신 태그: `v0.1.1`
+- 설치 파일은 위 릴리스 페이지의 `Assets`에서 내려받으면 됩니다.
 
 ## 소스에서 직접 빌드하려면
 

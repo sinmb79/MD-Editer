@@ -21,6 +21,24 @@ jobs:
 
       - uses: dtolnay/rust-toolchain@stable
 
+      - name: Validate tag and project versions
+        shell: pwsh
+        run: |
+          $tagVersion = "${{ github.ref_name }}".TrimStart('v')
+          $packageVersion = (Get-Content package.json | ConvertFrom-Json).version
+          $tauriVersion = (Get-Content src-tauri/tauri.conf.json | ConvertFrom-Json).version
+          $cargoVersion = (Select-String -Path src-tauri/Cargo.toml -Pattern '^version = "([^"]+)"$').Matches[0].Groups[1].Value
+
+          $uniqueVersions = @($packageVersion, $tauriVersion, $cargoVersion) | Select-Object -Unique
+
+          if ($uniqueVersions.Count -ne 1) {
+            throw "Version mismatch detected. package.json=$packageVersion, tauri.conf.json=$tauriVersion, Cargo.toml=$cargoVersion"
+          }
+
+          if ($uniqueVersions[0] -ne $tagVersion) {
+            throw "Release tag v$tagVersion does not match project version $($uniqueVersions[0])."
+          }
+
       - uses: Swatinem/rust-cache@v2
         with:
           workspaces: src-tauri
