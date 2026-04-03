@@ -127,10 +127,17 @@ export function createDocumentController(service: DocumentFileService) {
     },
 
     async exportPdf(session: DocumentSession): Promise<DocumentSession> {
-      const savedSession = session.currentPath ? await this.save(session) : await this.save(session);
+      let savedSession: DocumentSession;
+
+      try {
+        savedSession = session.currentPath ? await this.save(session) : await this.saveAs(session);
+      } catch (error) {
+        const detail = error instanceof Error ? error.message : String(error);
+        throw new Error(`PDF 내보내기 전 문서 저장에 실패했습니다: ${detail}`);
+      }
 
       if (!savedSession.currentPath) {
-        return session;
+        throw new Error('PDF 내보내기를 하려면 먼저 문서를 저장해야 합니다.');
       }
 
       await service.exportDocument(savedSession.currentPath, 'pdf');
