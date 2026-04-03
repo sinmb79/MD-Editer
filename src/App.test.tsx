@@ -49,6 +49,16 @@ function createFileServiceMock(overrides: Partial<DocumentFileService> = {}): Do
   };
 }
 
+function clickTemplate(label: string) {
+  const button = screen.getByText(label, { selector: 'strong' }).closest('button');
+
+  if (!button) {
+    throw new Error(`Template button not found: ${label}`);
+  }
+
+  fireEvent.click(button);
+}
+
 describe('App', () => {
   beforeEach(() => {
     vi.clearAllMocks();
@@ -62,7 +72,7 @@ describe('App', () => {
     expect(screen.getByRole('button', { name: '열기' })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: '저장' })).toBeInTheDocument();
 
-    fireEvent.click(screen.getByRole('button', { name: /보고서/ }));
+    clickTemplate('보고서');
 
     await waitFor(() =>
       expect((screen.getByLabelText('문서 편집기') as HTMLTextAreaElement).value).toContain('# 보고서 제목'),
@@ -80,7 +90,7 @@ describe('App', () => {
     fireEvent.change(screen.getByLabelText('문서 편집기'), {
       target: { value: '지우지 말아야 할 초안' },
     });
-    fireEvent.click(screen.getByRole('button', { name: /보고서/ }));
+    clickTemplate('보고서');
 
     await waitFor(() =>
       expect((screen.getByLabelText('문서 편집기') as HTMLTextAreaElement).value).toBe('지우지 말아야 할 초안'),
