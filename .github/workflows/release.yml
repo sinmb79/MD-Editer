@@ -1,0 +1,47 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-release:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - uses: dtolnay/rust-toolchain@stable
+
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: src-tauri
+
+      - run: npm ci
+
+      - name: Install Pandoc and prepare sidecar
+        shell: pwsh
+        run: |
+          choco install pandoc --yes --no-progress
+          refreshenv
+          $pandoc = (Get-Command pandoc -ErrorAction Stop).Source
+          Copy-Item -LiteralPath $pandoc -Destination src-tauri/binaries/pandoc-x86_64-pc-windows-msvc.exe -Force
+          Write-Host "Pandoc sidecar ready: $(Get-Item src-tauri/binaries/pandoc-x86_64-pc-windows-msvc.exe)"
+
+      - name: Build Tauri app
+        shell: pwsh
+        run: npx tauri build
+
+      - name: Upload installer to release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: src-tauri/target/release/bundle/nsis/*.exe
+          generate_release_notes: true
